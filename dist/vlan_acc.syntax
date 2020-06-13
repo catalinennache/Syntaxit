@@ -1,0 +1,12 @@
+vlan <<vlan_number>>
+name <<vlan_name>>
+interface range <<vlan_interface_range>>
+switchport mode access
+switchport access vlan <<vlan_number>>
+switchport port-security
+switchport port-security maximum 2
+switchport port-security mac-address sticky
+switchport port-security violation shutdown
+switchport port-security aging time 1
+spanning-tree bpduguard enable
+spanning-tree portfast

@@ -1,0 +1,34 @@
+<SWITCH@SwAcc>
+server = 99.192.31.254
+role = access
+vlan_acc = 18,20
+vlan_acc_name = MUNTENEGRU1,MUNTENEGRU2
+vlan_trunk = 22
+vlan_null = 99
+vlan_null_interfaces = fa0/2-17,fa0/21,g0/1-2
+vlan_man_interfaces = fa0/1
+vlan_acc_interfaces = fa0/18-20~fa0/22-24
+<SWITCH@SD>
+server = 99.192.31.254
+role = trunk
+vlan_acc = 18,20
+vlan_acc_name = MUNTENEGRU1,MUNTENEGRU2
+vlan_trunk = 22
+vlan_null = 99
+vlan_null_interfaces = fa0/3-24,g0/1-2
+vlan_man_interfaces = fa0/1-2
+<SWITCH@SC>
+server = 99.192.31.254
+role = trunk
+vlan_acc = 18,20
+vlan_acc_name = MUNTENEGRU1,MUNTENEGRU2
+vlan_trunk = 22
+vlan_null = 99
+vlan_null_interfaces = fa0/3-24,g0/2
+vlan_man_interfaces = fa0/2,g0/1
+<ROUTER@MUNTENEGRU3>
+server = 99.192.31.254
+<ROUTER@MUNTENEGRU4>
+server = 99.192.31.254
+<ROUTER@MUNTENEGRU5>
+server = 99.192.31.254

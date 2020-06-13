@@ -1,0 +1,36 @@
+en
+configure terminal
+no ip domain lookup
+hostname <<host>>
+enable secret cisco12345
+enable password cisco54321
+service password-encryption
+security passwords min-length 10
+login block-for 30 attempts 3 within 15
+banner login .Accesul persoanelor neautorizate strict interzis.
+banner motd .Serverul va fi inchis luni la ora 14.
+line con 0
+password ciscoconpass
+login
+logging synchronous
+exec-timeout 15 0
+exit
+line vty 0 15
+password ciscovtypass
+login
+logging synchronous
+exec-timeout 20 0
+exit
+ip domain name cti.ro
+username admin privilege 15 secret adminpass1
+line vty 0 15
+transport input ssh
+login local
+exit
+crypto key gen rsa
+2048
+ip ssh version 2
+no cdp run
+logging host <<server>>
+service timestamps log datetime msec
+service timestamps debug datetime msec

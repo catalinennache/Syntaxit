@@ -1,0 +1,30 @@
+<SWITCH@SwAcc>
+server = 48.128.56.14
+role = access
+vlan_acc = 44,45
+vlan_acc_name = ELVETIA1,ELVETIA2
+vlan_trunk = 46
+vlan_null = 99
+vlan_null_interfaces = fa0/2-3,fa0/8-9,fa0/14-24,g0/1-2
+vlan_man_interfaces = fa0/1
+vlan_acc_interfaces = fa0/4-7~fa0/10-13
+<SWITCH@SD>
+server = 48.128.56.14
+role = trunk
+vlan_acc = 44,45
+vlan_acc_name = ELVETIA1,ELVETIA2
+vlan_trunk = 46
+vlan_null = 99
+vlan_null_interfaces = fa0/3-24,g0/1-2
+vlan_man_interfaces = fa0/1-2
+<SWITCH@SWC>
+server = 48.128.56.14
+role = trunk
+vlan_acc = 44,45
+vlan_acc_name = ELVETIA1,ELVETIA2
+vlan_trunk = 46
+vlan_null = 99
+vlan_null_interfaces = fa0/3-24,g0/1-2
+vlan_man_interfaces = fa0/1,g0/1
+<ROUTER@nume>
+server = 48.128.56.14

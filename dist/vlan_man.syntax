@@ -1,0 +1,6 @@
+vlan <<vlan_number>>
+name <<vlan_name>>
+interface range <<vlan_interface_range>>
+switchport mode trunk
+switchport trunk native vlan <<vlan_number>>
+switchport trunk allowed vlan <<allowed_vlans>>,<<vlan_number>>

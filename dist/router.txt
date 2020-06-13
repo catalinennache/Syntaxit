@@ -1,0 +1,58 @@
+Router
+
+
+router rip
+version 2
+network -urmat de toate retelele cu care are legatura
+no auto summary
+
+
+interface giga 0/0.49
+encapsulation dot1q 49
+description "legatura cu vlan 49 "
+ip address (def. gateway pt vlan 49+masca)
+
+facem asta pt toate vlanurile
+
+exit
+
+
+interface giga 0/0
+no shutdown
+
+interface g0/0(.49) //pt vlanuri 
+ip helper-address ip de cea mai apropiata dintre interfetele tip serial ale routerului 
+
+exit
+
+punem ip-uri pe seriale
+
+
+DHCP
+ip dhcp excluded-address 192.168.30.1 192.168.30.10
+ip dhcp pool vlanx
+network (N.A. VLAN+MASCA)
+default-router 192.168.30.1
+dns-server 192.168.20.254
+
+
+
+
+
+
+
+
+cablare
+
+pc-sw -str
+sw-sw- cross
+sw-router-str
+rouer-wi-fi -cross
+router-router-serial
+schimb placa la server
+de la routerul cu server la sw pe giga 
+sw-server -st pe giga
+
+
+Dns- nume domeniu(cti.ro) +ip server+ add 
+
